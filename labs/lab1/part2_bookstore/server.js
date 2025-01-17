@@ -1,27 +1,30 @@
-const http = require("http");
+const express = require("express");
+const path = require("path");
+const app = express();
+const PORT = 8000;
 
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    res.write("Hello World");
-    res.end();
-  } else if (req.url === "/about") {
-    res.write("About Us");
-    res.end();
-  } else if (req.url === "/login") {
-    res.write("Login");
-    res.end();
-  } else if (req.url === "/register") {
-    res.write("Register");
-    res.end();
-  } else if (req.url === "/logout") {
-    res.write("Logout");
-    res.end();
-  } else {
-    res.write("Page Not Found");
-    res.end();
-  }
+// Serve static files from the "pages" folder
+app.use(express.static(path.join(__dirname, "pages")));
+
+// Handle specific routes
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "index.html"));
 });
 
-server.listen(3000);
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "about.html"));
+});
 
-console.log("Listening on port 3000");
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "pages", "contact.html"));
+});
+
+// Catch-all for 404
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "pages", "404.html"));
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running at http://127.0.0.1:${PORT}`);
+});
