@@ -1,0 +1,81 @@
+/* Global reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb); /* Professional gradient */
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Headings */
+h2 {
+  color: rgb(4, 9, 157); /* A slightly darker blue that complements the buttons */
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Inputs */
+input[type="file"] {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* Image grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Message styling */
+.message {
+  padding: 15px;
+  background-color: #e7f3ff;
+  border: 1px solid #0077cc;
+  border-radius: 5px;
+  color: #0077cc;
+  margin-bottom: 20px;
+}
